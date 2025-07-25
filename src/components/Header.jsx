@@ -11,7 +11,7 @@ const Header = () => {
             <div className="bg-[#FFFFFF] py-5">
                 <Container>
                     <div className="lg:flex items-center">
-                        <div className="lg:w-4/12 pl-2 lg:pl-0">
+                        <div className="lg:w-4/12 pl-2 2xl:pl-0">
                             <img src={logo} alt="" />
                         </div>
                         <div className="lg:w-4/12 w-full">
@@ -23,7 +23,7 @@ const Header = () => {
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Journal</li>
                             </ul>
                         </div>
-                        <div className="lg:hidden absolute top-3 right-4 text-[20px]" onClick={()=>setMenu(!menu)}>
+                        <div className="lg:hidden absolute top-3 right-2 text-[20px]" onClick={()=>setMenu(!menu)}>
                             {menu ? <RxCross2 /> :  <FaBars />}
                         </div>
                     </div>
