@@ -30,7 +30,6 @@ function SamplePrevArrow(props) {
 const Banner = () => {
     var settings = {
         infinite: true,
-        speed: 500,
         dots: true,
         slidesToShow: 1,
         slidesToScroll: 1,
