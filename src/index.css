@@ -4,9 +4,50 @@
 @theme{
     --font-dm:"DM Sans", sans-serif;
 }
-
-
-
-
-
+.slick-dots .slick-active div{
+    border-right: 2px solid #262626 !important;
+    color: #262626 !important;
+}
+.left{
+    background-color: #262626;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color:#FFFFFF ;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform:translateY(-50%) ;
+    -webkit-transform:translateY(-50%) ;
+    -moz-transform:translateY(-50%) ;
+    -ms-transform:translateY(-50%) ;
+    -o-transform:translateY(-50%) ;
+    z-index: 2;
+    cursor: pointer;
+}
+.right{
+    background-color: #262626;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color:#FFFFFF ;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform:translateY(-50%) ;
+    -webkit-transform:translateY(-50%) ;
+    -moz-transform:translateY(-50%) ;
+    -ms-transform:translateY(-50%) ;
+    -o-transform:translateY(-50%) ;
+    z-index: 2;
+    cursor: pointer;
+}
 

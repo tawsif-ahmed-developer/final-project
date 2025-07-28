@@ -52,7 +52,7 @@ const Navbar = () => {
                             {show &&
                                 <div className="bg-[#262626] w-[263px] cursor-pointer absolute left-0 top-11">
                                     <ul className='relative text-[#FFFFFFB2]'>
-                                        <li className='group pt-2 pb-3 text-[14px] font-[400] pl-[24px] border-b-[1px] border-[#2D2D2D] duration-300 ease-in-out hover:pl-[30px] hover:text-[#FFFFFF] hover:font-[700] flex items-center justify-between'>Accesories <LuChevronRight className='mr-2' />
+                                        <li className='group pt-3 pb-3 text-[14px] font-[400] pl-[24px] border-b-[1px] border-[#2D2D2D] duration-300 ease-in-out hover:pl-[30px] hover:text-[#FFFFFF] hover:font-[700] flex items-center justify-between'>Accesories <LuChevronRight className='mr-2' />
                                             <div className=" gap-7 absolute top-0 left-66 w-[475px] bg-[#FFFFFF] p-4 hidden group-hover:flex">
                                                 <ul className='text-[#767676] text-[14px] font-normal '>
                                                     <li className='pb-1 text-[16px] text-[#262626] font-dm font-bold'>Accesories</li>
@@ -273,7 +273,7 @@ const Navbar = () => {
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li className='group pb-2 text-[14px] font-[400] pl-[24px] duration-300 ease-in-out hover:pl-[30px] hover:text-[#FFFFFF] hover:font-[700] flex items-center justify-between'>Home appliances <LuChevronRight className='mr-2' />
+                                        <li className='group pb-[19px] text-[14px] font-[400] pl-[24px] duration-300 ease-in-out hover:pl-[30px] hover:text-[#FFFFFF] hover:font-[700] flex items-center justify-between'>Home appliances <LuChevronRight className='mr-2' />
                                             <div className=" gap-7 absolute top-0 left-66 w-[475px] bg-[#FFFFFF] p-4 hidden group-hover:flex">
                                                 <ul className='text-[#767676] text-[14px] font-normal '>
                                                     <li className='pb-1 text-[16px] text-[#262626] font-dm font-bold'>appliances</li>
