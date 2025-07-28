@@ -1,6 +1,7 @@
 import React from 'react'
 import banone from "../assets/banner01.png"
 import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 import Container from './Container'
@@ -34,7 +35,7 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
+        speed: 1000,
         autoplaySpeed: 3000,
         arrows: false,
         nextArrow: <SampleNextArrow />,
