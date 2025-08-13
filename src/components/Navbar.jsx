@@ -50,7 +50,7 @@ const Navbar = () => {
                             </div>
                             {/* show */}
                             {show &&
-                                <div className="bg-[#262626] w-[263px] cursor-pointer absolute left-0 top-11">
+                                <div className="bg-[#262626] w-[263px] z-10 cursor-pointer absolute left-0 top-11">
                                     <ul className='relative text-[#FFFFFFB2]'>
                                         <li className='group pt-3 pb-3 text-[14px] font-[400] pl-[24px] border-b-[1px] border-[#2D2D2D] duration-300 ease-in-out hover:pl-[30px] hover:text-[#FFFFFF] hover:font-[700] flex items-center justify-between'>Accesories <LuChevronRight className='mr-2' />
                                             <div className=" gap-7 absolute top-0 left-66 w-[475px] bg-[#FFFFFF] p-4 hidden group-hover:flex">
@@ -230,7 +230,7 @@ const Navbar = () => {
                                             </div>
                                         </li>
                                         <li className='group pb-3 text-[14px] font-[400] pl-[24px] border-b-[1px] border-[#2D2D2D] duration-300 ease-in-out hover:pl-[30px] hover:text-[#FFFFFF] hover:font-[700] flex items-center justify-between'>Bags <LuChevronRight className='mr-2' />
-                                            <div className=" gap-7 absolute top-0 left-66 w-[557px] bg-[#FFFFFF] p-4 hidden group-hover:flex">
+                                            <div className=" gap-7 absolute top-0 left-66 w-[475px] bg-[#FFFFFF] p-4 hidden group-hover:flex">
                                                 <ul className='text-[#767676] text-[14px] font-normal '>
                                                     <li className='pb-1 text-[16px] text-[#262626] font-dm font-bold'>Bags</li>
                                                     <li className='pb-[2px] duration-300 ease-in-out hover:text-[#262626] hover:font-bold'>two</li>
@@ -342,7 +342,7 @@ const Navbar = () => {
                                 {/* one */}
 
                                 {sop &&
-                                    <div className="absolute  right-0 top-10 bg-[#FFFFFF] shadow-lg w-[360px] border-[1px] border-[#F0F0F0]">
+                                    <div className="z-20 absolute  right-0 top-10 bg-[#FFFFFF] shadow-lg w-[360px] border-[1px] border-[#F0F0F0]">
                                         <div className="p-4 flex pl-3 bg-[#F5F5F3]">
                                             <div className="w-2/7 bg-[#D8D8D8] h-[80px] rounded-[5px]">
 
@@ -372,7 +372,7 @@ const Navbar = () => {
                                 {/* one end */}
                                 {/* accshow */}
                                 {accshow &&
-                                    <div className="cursor-pointer bg-[#262626] absolute  right-12 top-10">
+                                    <div className="cursor-pointer bg-[#262626] z-20 absolute  right-12 top-10">
                                         <ul className='bg-[#FFFFFF] shadow-lg'>
                                             <li className='w-[160px] duration-300 ease-in-out py-3 text-center text-[14px] hover:text-white hover:font-[700] hover:bg-[#2B2B2B]'>My Account</li>
                                             <li className='w-[160px] duration-300 ease-in-out py-3 text-center text-[14px] hover:text-white hover:font-[700] hover:bg-[#2B2B2B]'>Log Out</li>
@@ -390,6 +390,7 @@ const Navbar = () => {
 }
 
 export default Navbar
+
 
 
 // import React, { useEffect, useRef, useState } from 'react'
@@ -494,6 +495,7 @@ export default Navbar
 // };
 
 // export default Navbar;
+
 
 
 

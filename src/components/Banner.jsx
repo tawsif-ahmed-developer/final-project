@@ -15,7 +15,7 @@ function SampleNextArrow(props) {
     return (
         <div
             onClick={onClick}
-        ><FaChevronRight className='right' /></div>
+        ><FaChevronRight className='bg-[#262626] w-[30px] h-[30px] rounded-full text-white absolute top-1/2 right-[20px] -translate-y-1/2 z-3 cursor-pointer' /></div>
     );
 }
 
@@ -24,7 +24,7 @@ function SamplePrevArrow(props) {
     return (
         <div
             onClick={onClick}
-        ><FaChevronLeft className='left' /></div>
+        ><FaChevronLeft className='bg-[#262626] w-[30px] h-[30px] rounded-full text-white absolute top-1/2 left-[20px] -translate-y-1/2 z-3 cursor-pointer'/></div>
     );
 }
 
@@ -68,7 +68,7 @@ const Banner = () => {
                 style={{
                     width: "30px",
                     color: "transparent",
-                    borderRight: "2px #FFFFFFsolid",
+                    borderRight: "2px solid white",
                     padding: "8px 0",
                 }}
             >
@@ -79,27 +79,27 @@ const Banner = () => {
 
     return (
         <>
-            <div className="">
+            <div className="relative overflow-hidden">
                 <Slider {...settings}>
                     <div className="w-full">
-                        <img className="w-full" src={banone} alt="banner" />
+                        <img className="w-full" src={banone} alt="banner"/>
                     </div>
                     <div>
-                        <img className="w-full" src={banone} alt="banner" />
+                        <img className="w-full" src={banone} alt="banner"/>
                     </div>
                     <div>
-                        <img className="w-full" src={banone} alt="banner" />
+                        <img className="w-full" src={banone} alt="banner"/>
                     </div>
                     <div>
-                        <img className="w-full" src={banone} alt="banner" />
+                        <img className="w-full" src={banone} alt="banner"/>
                     </div>
                 </Slider>
             </div>
-            <div className="bg-[#ffff] border-b-[1px] border-[#F0F0F0] py-3">
+            <div className="bg-[#ffff] border-b-[1px] border-[#F0F0F0] py-2 md:py-3">
                 <Container className="justify-between flex">
-                    <div className="pl-2 2xl:pl-0 flex items-center"><Fa2 /> <span className='pl-2 font-dm text-[16px] font-normal text-[#6D6D6D]'>Two years warranty</span></div>
-                    <div className="flex items-center"><FaTruck /><span className='pl-2 font-dm text-[16px] font-normal text-[#6D6D6D]'>Free shipping</span></div>
-                    <div className="pr-2 2xl:pr-0 flex items-center"><IoIosRefresh /> <span className='pl-2 font-dm text-[16px] font-normal text-[#6D6D6D]'>Return policy in 30 days</span></div>
+                    <div className="pl-2 2xl:pl-0 flex items-center"><Fa2  className="text-[13px] md:text-[20px]"/> <span className='pl-1 md:pl-2 font-dm text-[10px] md:text-[16px] font-normal text-[#6D6D6D]'>Two years warranty</span></div>
+                    <div className="flex items-center"><FaTruck className="text-[13px] md:text-[20px]"/><span className='pl-1 md:pl-2 font-dm text-[10px] md:text-[16px] font-normal text-[#6D6D6D]'>Free shipping</span></div>
+                    <div className="pr-2 2xl:pr-0 flex items-center"><IoIosRefresh  className="text-[13px] md:text-[20px]"/> <span className='pl-1 md:pl-2 font-dm text-[10px] md:text-[16px] font-normal text-[#6D6D6D]'>Return policy in 30 days</span></div>
                 </Container>
             </div>
         </>
