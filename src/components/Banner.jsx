@@ -8,7 +8,7 @@ import Container from './Container'
 import { IoIosRefresh } from "react-icons/io";
 import { Fa2 } from "react-icons/fa6";
 import { FaTruck } from "react-icons/fa6";
-
+import "./banner.css"
 
 function SampleNextArrow(props) {
     const { onClick } = props;

@@ -32,7 +32,7 @@ const Bestsellers = () => {
                             </div>
                             <div className="md:flex justify-between h-16">
                                 <h3 className='text-[12px] md:text-[20px] font-dm text-[#262626] font-bold'>{item.title}</h3>
-                                <h4 className='text-[16px] font-dm text-[#767676] font-[400]'>{item.price}</h4>
+                                <h4 className='text-[16px] font-dm text-[#767676] font-[400] pt-1'>{item.price}</h4>
                             </div>
                             <div className="pb-2 md:pb-3">
                                 <p>{item.availabilityStatus}</p>

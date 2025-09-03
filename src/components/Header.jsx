@@ -3,6 +3,7 @@ import Container from './Container'
 import logo from "../assets/logo.png"
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [menu, setMenu] = useState(false);
@@ -16,8 +17,8 @@ const Header = () => {
                         </div>
                         <div className="lg:w-4/12 w-full">
                             <ul className={`lg:flex font-[400] text-[14px] gap-6 justify-center font-dm text-[#767676] duration-300 ease-in-ou text-center cursor-pointer  ${menu == true ? "bg-[#9ff0c1] lg:bg-[#FFFFFF] mt-0" : " mt-[-150px] lg:mt-0"}`}>
-                                <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Home</li>
-                                <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Shop</li>
+                                <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'><Link to="/">Home</Link></li>
+                                <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'><Link to="/shop">Shop</Link></li>
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>About</li>
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Contacts</li>
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Journal</li>

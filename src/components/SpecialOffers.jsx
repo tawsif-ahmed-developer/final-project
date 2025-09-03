@@ -20,7 +20,7 @@ const SpecialOffers = () => {
                     <div className="pb-10 font-dm font-bold text-[16px] sm:text-[24px] lg:text-[39px] text-[#262626]">Special Offers</div>
                     <div className="flex gap-10">
                         {filteredData.map(item => (
-                            <div key={item.id} className="w-[95%]  relative duration-300 ease-in-out shadow-md hover:shadow-xl cursor-pointer group">
+                            <div key={item.id} className="w-[100%]  relative duration-300 ease-in-out shadow-md hover:shadow-xl cursor-pointer group">
                                 <div className="relative">
                                     <img src={item.thumbnail} alt="" className='w-full' />
                                     <div className="absolute bottom-0 left-0 bg-white w-full hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
@@ -35,7 +35,7 @@ const SpecialOffers = () => {
                                 </div>
                                 <div className="md:flex justify-between h-16">
                                     <h3 className='text-[12px] md:text-[20px] font-dm text-[#262626] font-bold'>{item.title}</h3>
-                                    <h4 className='text-[16px] font-dm text-[#767676] font-[400]'>{item.price}</h4>
+                                    <h4 className='text-[16px] font-dm text-[#767676] font-[400] pt-1'>{item.price}</h4>
                                 </div>
                                 <div className="pb-2 md:pb-3">
                                     <p>{item.availabilityStatus}</p>

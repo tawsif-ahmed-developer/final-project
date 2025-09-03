@@ -1,7 +1,9 @@
-.slick-slide {
-  justify-content: space-between !important;
+.main .slick-slide {
+  padding: 0 12px;
   height: 391px; 
+
 }
-.slick-list {
-  height: 411px; 
+.main .slick-list {
+  height: 430px; 
+  margin: 0 -10px;
 }

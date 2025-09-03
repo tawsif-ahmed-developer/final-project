@@ -8,6 +8,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { Apidata } from './ContextApi'
+import { Link } from 'react-router-dom';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -53,15 +54,14 @@ const NewArrivals = () => {
     <>
       <div className="">
         <Container>
-
           <>
             <div className="font-dm font-bold text-[16px] sm:text-[24px] lg:text-[39px] text-[#262626]">New Arrivals</div>
-            <div className="py-15">
+            <div className="py-15 main">
               <Slider {...settings1}>
                 {data.map((alldata) => (
                   <>
-                  
-                      <div className="w-[90%] h-97 relative duration-300 ease-in-out shadow-md hover:shadow-xl  cursor-pointer group  ">
+                    <Link to="/shop">
+                      <div className="w-[100%] h-100 relative duration-300 ease-in-out shadow-md hover:shadow-xl  cursor-pointer group  ">
                         <div className="relative ">
                           <img src={alldata.thumbnail} alt="" className='w-full' />
                           <div className="absolute bottom-0 left-0 bg-white w-full hidden md:block  opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
@@ -70,18 +70,18 @@ const NewArrivals = () => {
                             <h6 className='flex items-center justify-end pb-3 pr-2 duration-300 ease-in-out text-[16px] font-dm font-[400] text-[#767676] hover:font-bold hover:text-[#262626]'>Add to Cart  <span className='pl-4'><FaShoppingCart className='text-[#262626]' /></span></h6>
                           </div>
                         </div>
-                        <div className="md:flex items-center justify-between h-16 ">
+                        <div className="md:flex justify-between h-16 ">
                           <h3 className='text-[12px] md:text-[20px] font-dm text-[#262626] font-bold'>{alldata.title}</h3>
-                          <h4 className='text-[16px] font-dm text-[#767676] font-[400]'>{alldata.price}</h4>
+                          <h4 className='text-[16px] font-dm text-[#767676] font-[400] pt-1'>{alldata.price}</h4>
                         </div>
-                        <div className="pb-2 md:pb-3">
+                        <div className="">
                           <p>{alldata.availabilityStatus}</p>
                         </div>
                         <div className=" absolute top-1 md:top-2 left-1 md:left-3 z-10 bg-[#262626] text-white px-3 py-0.2 text-[12px] md:text-[16px]">
                           {alldata.discountPercentage}%
                         </div>
                       </div>
-                  
+                    </Link>
                   </>
 
                 ))}
@@ -90,11 +90,6 @@ const NewArrivals = () => {
             </div>
 
           </>
-
-
-
-
-
         </Container>
       </div>
     </>
