@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Container from '../components/Container'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 import { IoAdd } from 'react-icons/io5'
+import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from 'react-icons/io'
+import { Apidata } from '../components/ContextApi'
 
 const ProductDitails = () => {
   const productid = useParams()
+  const data = useContext(Apidata)
   const [singleProducts, setSingleproducts] = useState([])
 
 
@@ -20,10 +23,18 @@ const ProductDitails = () => {
     singleproduct()
 
   }, [])
-  console.log(singleProducts);
+
+  const clientRating = Array.from({ length:5 }, ( _ , index) => {
+    const number = index + 0.5
+    return(
+      singleProducts.rating > index + 1 ? <IoIosStar /> :singleProducts.rating > number ? <IoIosStarHalf/> : <IoIosStarOutline />
+    )
+  })
+
 
 
   return (
+
     <div className='pb-[10px]'>
       <Container>
         <div className="flex gap-5 py-3">
@@ -33,7 +44,8 @@ const ProductDitails = () => {
                 Products
               </h2>
               <span className="font-[400] font-dm xl:text-[12px] lg:text-[10px] text-[9px] text-[#767676] hover:text-[#e83d26] hover:underline cursor-pointer">
-                <Link to="/shop">shop {">"} Products</Link>
+                <button onClick={() => window.history.back()} >shop {">"} Products</button>
+
               </span>
             </div>
           </div>
@@ -55,18 +67,14 @@ const ProductDitails = () => {
 
         <div className="w-6/12">
           <div className="flex gap-2 ">
-            <div className="flex text-[20px] text-[#FFD881]">
 
-
-            </div>
-
-            <div className="">
-              <p className='text-[#767676] font-dm text-[14px] '>rating</p>
+            <div className="flex gap-1 text-amber-400">
+              {clientRating}
             </div>
           </div>
           <div className="flex gap-6 items-center border-b-1 pb-[20px] border-[#F0F0F0] py-[20px]">
-            <p className='text-[#767676] font-dm text-[16px] line-through'>$45 </p>
-            <p className='text-[#262626] font-dm font-bold text-[20px]'>price</p>
+            <p className='text-[#767676] font-dm text-[16px] line-through'>${singleProducts.price} </p>
+            <p className='text-[#262626] font-dm font-bold text-[20px]'>${singleProducts.price}</p>
           </div>
           <div className="flex items-center gap-5 h-[60px]">
             <p className='text-[#262626] font-dm font-bold'>COLOR:</p>
@@ -91,14 +99,14 @@ const ProductDitails = () => {
               </div>
               <div className="flex items-center border-[1px] border-[#F0F0F0] gap-3">
                 <div className="text-[20px] w-[50px] text-center cursor-pointer" >-</div>
-                <div className=" text-[20px] w-[50px] text-center ">onshow </div>
+                <div className=" text-[20px] w-[50px] text-center ">1</div>
                 <div className="text-[20px] w-[50px] px-[10px] cursor-pointer">+</div>
               </div>
             </div>
           </div>
           <div className="flex gap-2 py-5 border-b-[1px] border-[#F0F0F0]">
             <p className='font-dm font-bold text-[16px] text-[#262626]'>STATUS:</p>
-            <p className='font-dm text-[16px] text-[#767676]'>stock In stock</p>
+            <p className='font-dm text-[16px] text-[#767676]'>{singleProducts.stock} In stock</p>
           </div>
 
           <div className="flex gap-5 py-[10px] border-b-[1px] border-[#F0F0F0]">

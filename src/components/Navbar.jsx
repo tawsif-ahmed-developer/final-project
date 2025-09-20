@@ -17,9 +17,10 @@ const Navbar = () => {
     const [accshow, setAccShow] = useState(false);
     const [sop, setsop] = useState(false);
 
+
     useEffect(() => {
         document.addEventListener("click", (e) => {
-            console.log(cateRef.current.contains(e.target) == true);
+
             if (cateRef.current.contains(e.target) == true) {
                 setShow(!show)
             } else {

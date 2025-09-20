@@ -10,7 +10,7 @@ import { GiSelfLove } from 'react-icons/gi';
 const Post = ({ allpage, filtercategory, active }) => {
     const [allfilter, setAllfilter] = useState([])
     const [showAll, setShowAll] = useState(true)
-
+    
     useEffect(() => {
         const filtercate = filtercategory.slice(0, 6)
         setAllfilter(filtercate)
@@ -38,12 +38,12 @@ const Post = ({ allpage, filtercategory, active }) => {
                             ?
                             <div className="">
 
-
                                 {
                                     allfilter.map((item) => (
                                         <div className="py-5 h-[300px]" key={item.id}>
                                             <div className="relative h-full overflow-hidden shadow-md group flex items-center">
-                                                <Link to={`/Shop/${item.id}`}>
+                                                <Link to={`/shop/${item.id}`}>
+
                                                     <img
                                                         className="w-[80%] cursor-pointer object-cover "
                                                         src={item.thumbnail}
@@ -118,7 +118,10 @@ const Post = ({ allpage, filtercategory, active }) => {
                                                 className="h-100 relative shadow-md hover:shadow-xl duration-300 ease-in-out cursor-pointer group"
                                             >
                                                 <div className="relative">
-                                                    <img src={item.thumbnail} alt="" className="w-full" />
+                                                    <Link to={`/Shop/${item.id}`}>
+                                                        <img src={item.thumbnail} alt="" className="w-full" />
+                                                    </Link>
+
 
                                                     <div className="absolute bottom-0 left-0 bg-white w-full hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                                                         <h3 className="flex items-center justify-end pt-2 pb-3 pr-2 text-[16px] font-dm font-[400] text-[#767676] hover:font-bold hover:text-[#262626]">
@@ -163,7 +166,7 @@ const Post = ({ allpage, filtercategory, active }) => {
                                         filtercategory.length > 6 &&
                                         <h2 onClick={handleshow} className='shadow-xl cursor-pointer w-30 pb-2 pt-2 text-[18px] border-1 border-[#262626] text-center items-center font-dm font-bold capitalize duration-200 ease-in-out bg-black text-white'>Show All</h2>
                                         :
-                                        
+
                                         <h2 onClick={handleLess} className='shadow-xl cursor-pointer w-30 pb-2 pt-2 text-[18px] border-1 border-[#262626] text-center items-center font-dm font-bold capitalize duration-200 ease-in-out bg-black text-white'>Show less</h2>
                                     }
                                 </div>
@@ -185,7 +188,7 @@ const Post = ({ allpage, filtercategory, active }) => {
                                                     alt=""
                                                 />
                                             </Link>
-                                            <div className="absolute top-4 left-3 z-5">
+                                            <div className="absolute top-4 left-3 z-5 ">
                                                 <p className="py-[5px] px-[20px] border bg-black text-white font-bold text-[14px] font-dm">
                                                     {item.discountPercentage}%
                                                 </p>

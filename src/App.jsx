@@ -9,7 +9,6 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index element={<Home/>}></Route>
     <Route path="/shop" element={<Shop/>}></Route>
     <Route path="/shop/:id" element={<ProductDitails/>}></Route>
-
   </Route>
 ))
 
@@ -28,4 +27,4 @@ function App() {
 
 export default App
 
-// https://dummyjson.com/products
+
