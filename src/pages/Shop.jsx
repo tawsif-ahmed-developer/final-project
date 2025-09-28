@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Container from '../components/Container'
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io'
 import { Apidata } from '../components/ContextApi'
 import { MdGridView, MdViewList } from 'react-icons/md'
 import Post from '../components/Post'
 import Pagination from '../components/Pagination'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Shop = () => {
 
@@ -73,13 +74,13 @@ const Shop = () => {
     setActive("active");
 
   }
-const handlePrice = (value)=>{
-  setLow(value.low);
-  setHigh(value.high);
-  const filterprice = data.filter((item)=>item.price > value.low && item.price < value.high)
-  setFiltercategory(filterprice);
-  
-}
+  const handlePrice = (value) => {
+    setLow(value.low);
+    setHigh(value.high);
+    const filterprice = data.filter((item) => item.price > value.low && item.price < value.high)
+    setFiltercategory(filterprice);
+
+  }
 
 
   return (
@@ -104,7 +105,7 @@ const handlePrice = (value)=>{
                 <p className={`${show1 ? "font-dm font-bold text-[#262626] text-[12px] md:text-[16px] lg:text-[20px]  pb-2" : "font-dm font-bold text-[#262626] text-[12px] md:text-[16px] lg:text-[20px]"}`}>
                   Shop by Category
                 </p>
-                {show1 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                {show1 ? <IoIosArrowForward /> : <IoIosArrowDown />}
               </div>
               {!show1 && (
                 <>
@@ -132,7 +133,7 @@ const handlePrice = (value)=>{
                 <p className={`${show2 ? "font-dm font-bold text-[#262626] text-[12px] md:text-[16px] lg:text-[20px]  pb-2" : "font-dm font-bold text-[#262626] text-[12px] md:text-[16px] lg:text-[20px]"}`}>
                   Shop by Brand
                 </p>
-                {show2 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                {show2 ? <IoIosArrowForward /> : <IoIosArrowDown />}
               </div>
               {!show2 && (
                 <>
@@ -160,16 +161,16 @@ const handlePrice = (value)=>{
                 <p className={`${show3 ? "font-dm font-bold text-[#262626] text-[12px] md:text-[16px] lg:text-[20px]  pb-2" : "font-dm font-bold text-[#262626] text-[12px] md:text-[16px] lg:text-[20px]"}`}>
                   Shop by Price
                 </p>
-                {show3 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                {show3 ? <IoIosArrowForward /> : <IoIosArrowDown />}
               </div>
               {!show3 && (
                 <>
                   <ul className="mt-2">
-                    <li onClick={()=> handlePrice({low:0, high:10})}>$0  -  $10</li>
-                    <li onClick={()=> handlePrice({low:11, high:20})}>$10 - $20</li>
-                    <li onClick={()=> handlePrice({low:21, high:30})}>$21 - $30</li>
-                    <li onClick={()=> handlePrice({low:31, high:40})}>$31 - $40</li>
-                    <li onClick={()=> handlePrice({low:41, high:50})}>$41 - $50</li>
+                    <li className="cursor-pointer pb-2 text-1xl text-[#262621]  font-dm font-medium capitalize duration-200 ease-in-out hover:font-bold" onClick={() => handlePrice({ low: 0, high: 10 })}>$0  -  $10</li>
+                    <li className="cursor-pointer pb-2 text-1xl text-[#262621]  font-dm font-medium capitalize duration-200 ease-in-out hover:font-bold" onClick={() => handlePrice({ low: 11, high: 20 })}>$10 - $20</li>
+                    <li className="cursor-pointer pb-2 text-1xl text-[#262621]  font-dm font-medium capitalize duration-200 ease-in-out hover:font-bold" onClick={() => handlePrice({ low: 21, high: 30 })}>$21 - $30</li>
+                    <li className="cursor-pointer pb-2 text-1xl text-[#262621]  font-dm font-medium capitalize duration-200 ease-in-out hover:font-bold" onClick={() => handlePrice({ low: 31, high: 40 })}>$31 - $40</li>
+                    <li className="cursor-pointer pb-2 text-1xl text-[#262621]  font-dm font-medium capitalize duration-200 ease-in-out hover:font-bold" onClick={() => handlePrice({ low: 41, high: 50 })}>$41 - $50</li>
                     {filtercategory.length > 0 ?
 
                       <li onClick={handelAllproduct} className='cursor-pointer mt-4 pb-2 pt-2 text-[18px] border-1 border-[#262626] text-center items-center  text-[#262621]  font-dm font-bold capitalize duration-200 ease-in-out hover:bg-black hover:text-white'>All product</li>

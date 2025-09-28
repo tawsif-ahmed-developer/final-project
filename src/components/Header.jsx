@@ -20,7 +20,7 @@ const Header = () => {
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'><Link to="/">Home</Link></li>
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'><Link to="/shop">Shop</Link></li>
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>About</li>
-                                <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Contacts</li>
+                                <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'><Link to="/contact">Contacts</Link></li>
                                 <li className='duration-300 ease-in-out hover:text-[#262626] hover:font-[500]'>Journal</li>
                             </ul>
                         </div>

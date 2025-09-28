@@ -5,11 +5,14 @@ import axios from 'axios'
 import { IoAdd } from 'react-icons/io5'
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from 'react-icons/io'
 import { Apidata } from '../components/ContextApi'
+import { useDispatch } from 'react-redux'
+import { allproduct } from '../components/slice/productSlice'
 
 const ProductDitails = () => {
   const productid = useParams()
   const data = useContext(Apidata)
   const [singleProducts, setSingleproducts] = useState([])
+  const dispatch = useDispatch()
 
 
 
@@ -24,14 +27,17 @@ const ProductDitails = () => {
 
   }, [])
 
-  const clientRating = Array.from({ length:5 }, ( _ , index) => {
+  const clientRating = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5
-    return(
-      singleProducts.rating > index + 1 ? <IoIosStar /> :singleProducts.rating > number ? <IoIosStarHalf/> : <IoIosStarOutline />
+    return (
+      singleProducts.rating > index + 1 ? <IoIosStar /> : singleProducts.rating > number ? <IoIosStarHalf /> : <IoIosStarOutline />
     )
   })
 
-
+  const handleAddtoCart = (item) => {
+    // dispatch(allproduct({singleProducts}))
+    dispatch(allproduct({...item, qun:1}))
+  }
 
   return (
 
@@ -55,15 +61,7 @@ const ProductDitails = () => {
           </div>
 
         </div>
-        {/* <div className="flex gap-5 py-3 ">
-          <div className="w-6/12 cursor-pointer ">
-            <img className='w-full' src={singleProducts.thumbnail} alt="" />
-          </div>
-
-          <div className="w-6/12 cursor-pointer">
-            <img className='w-full' src={singleProducts.thumbnail} alt="" />
-          </div>
-        </div> */}
+        
 
         <div className="w-6/12">
           <div className="flex gap-2 ">
@@ -113,8 +111,8 @@ const ProductDitails = () => {
             <div className="w-[150px] text-center py-[10px] border-[1px] hover:bg-black hover:text-white duration-300 text-[#262626] font-dm font-bold cursor-pointer">
               <p>Add to Wish List</p>
             </div>
-            <div className="w-[150px] text-center py-[10px] border-[1px] hover:bg-black hover:text-white duration-300 text-[#262626] font-dm font-bold cursor-pointer">
-              <p>Add to Cart</p>
+            <div onClick={()=> handleAddtoCart(singleProducts)} className="w-[150px] text-center py-[10px] border-[1px] hover:bg-black hover:text-white duration-300 text-[#262626] font-dm font-bold cursor-pointer">
+              Add to Cart
             </div>
           </div>
 

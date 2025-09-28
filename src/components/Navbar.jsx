@@ -7,6 +7,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaSortDown } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     let cateRef = useRef()
@@ -16,6 +18,10 @@ const Navbar = () => {
     const [show, setShow] = useState(false);
     const [accshow, setAccShow] = useState(false);
     const [sop, setsop] = useState(false);
+
+    const cartdata = useSelector((state)=> state.product.cartItem)
+    console.log(cartdata);
+    
 
 
     useEffect(() => {
@@ -337,12 +343,16 @@ const Navbar = () => {
                                     <FaUser />
                                     <FaSortDown />
                                 </div>
-                                <div ref={sopRef} className="">
+
+                                <div ref={sopRef} className="relative">
                                     <FaShoppingCart />
+                                    <h3 className='absolute top-[-14px] right-[-7px] text-[12px] text-red-600'>{cartdata.length}</h3>
+                                    
                                 </div>
                                 {/* one */}
 
                                 {sop &&
+                                
                                     <div className="z-20 absolute  right-0 top-10 bg-[#FFFFFF] shadow-lg w-[360px] border-[1px] border-[#F0F0F0]">
                                         <div className="p-4 flex pl-3 bg-[#F5F5F3]">
                                             <div className="w-2/7 bg-[#D8D8D8] h-[80px] rounded-[5px]">
@@ -363,7 +373,8 @@ const Navbar = () => {
                                                 <h2>Subtotal: <span className='text-[#262626]'>$44.00</span> </h2>
                                             </div>
                                             <div className="flex gap-6">
-                                                <div className="w-1/2 bg-[#FFFFFF] duration-300 ease-in-out text-[14px] font-bold font-dm text-center py-3 border-[1px] border-[#2B2B2B] hover:bg-black hover:text-[#FFFFFF]">View Cart</div>
+                                              
+                                                <div className="w-1/2 bg-[#FFFFFF] duration-300 ease-in-out text-[14px] font-bold font-dm text-center py-3 border-[1px] border-[#2B2B2B] hover:bg-black hover:text-[#FFFFFF]"> <Link to="/cart">View Cart</Link></div>
                                                 <div className="w-1/2 bg-[#FFFFFF] duration-300 ease-in-out text-[14px] font-bold font-dm text-center py-3 border-[1px] border-[#2B2B2B] hover:bg-black hover:text-[#FFFFFF]">Checkout </div>
                                             </div>
                                         </div>
