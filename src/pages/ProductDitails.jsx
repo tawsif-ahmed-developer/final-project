@@ -72,7 +72,7 @@ const ProductDitails = () => {
           </div>
           <div className="flex gap-6 items-center border-b-1 pb-[20px] border-[#F0F0F0] py-[20px]">
             <p className='text-[#767676] font-dm text-[16px] line-through'>${singleProducts.price} </p>
-            <p className='text-[#262626] font-dm font-bold text-[20px]'>${singleProducts.price}</p>
+            <p className='text-[#262626] font-dm font-bold text-[20px]'>${(singleProducts.price - ((singleProducts.price / 100) * singleProducts.discountPercentage)).toFixed(2)}</p>
           </div>
           <div className="flex items-center gap-5 h-[60px]">
             <p className='text-[#262626] font-dm font-bold'>COLOR:</p>

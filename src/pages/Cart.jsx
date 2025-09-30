@@ -34,7 +34,7 @@ const Cart = () => {
                         <h2 className="text-xl font-semibold text-gray-900 dark:text-[#262626] sm:text-2xl">
                             Shopping Cart
                         </h2>
-                        <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+                        <div className=" mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
                             <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
                                 <div className="space-y-6">
                                     {cartdata.length > 0 ?
@@ -59,7 +59,7 @@ const Cart = () => {
                                                         <div className="flex items-center">
                                                             <button
                                                                 onClick={() => handleminus(item)}
-                                                                className="px-2 text-white py-1 border rounded"
+                                                                className="px-2 text-red-500 py-1 border rounded"
                                                             >
                                                                 -
                                                             </button>
@@ -75,7 +75,7 @@ const Cart = () => {
                                                             />
                                                             <button
                                                                 onClick={() => handleplus(item)}
-                                                                className="px-2 text-white py-1 border rounded"
+                                                                className="px-2 text-red-500 py-1 border rounded"
                                                             >
                                                                 +
                                                             </button>
