@@ -19,10 +19,11 @@ const Navbar = () => {
     const [show, setShow] = useState(false);
     const [accshow, setAccShow] = useState(false);
     const [sop, setsop] = useState(false);
+    const [filterProduct, setFilterProduct] = useState([])
     const data = useContext(Apidata)
 
+
     const cartdata = useSelector((state) => state.product.cartItem)
-    console.log(data);
 
 
 
@@ -51,7 +52,7 @@ const Navbar = () => {
         const productFilter = data.filter((item) =>
             item.title.toLowerCase().includes(e.target.value.toLowerCase())
         );
-        console.log(productFilter);
+       setFilterProduct(productFilter);
     };
 
     return (
@@ -338,12 +339,18 @@ const Navbar = () => {
                             }
 
                         </div>
-                        <div className="w-2/4 sm:w-1/3">
+                        <div className="relative w-2/4 sm:w-1/3">
                             <div className="relative text-[14px] font-[400] text-[#262626]">
                                 <input onChange={handleSearch} type="text" placeholder='Search Products' className='w-full py-2 bg-[#FFFFFF] pl-4 pr-7 rounded-[5px] outline-0' />
                                 <div className="absolute right-2 top-[13px]">
                                     <IoSearchSharp />
                                 </div>
+                            </div>
+                            {/* search */}
+                            <div className="z-10 overflow-hidden absolute top-[39px] left-0 w-full h-50 bg-white shadow-xl">
+                            {filterProduct.map((item)=>(
+                                <h2>{item.title}</h2>
+                            ))}
                             </div>
                         </div>
                         <div className="w-1/4 sm:w-1/3  lg:pr-0 relative">
