@@ -26,6 +26,13 @@ const Cart = () => {
         dispatch(decrementQuantity(item))
     }
 
+    const totalPrice = cartdata.reduce((pov, cre)=>{
+        const mainprice = (cre.price - (cre.price * cre.discountPercentage / 100))
+        return pov + (mainprice *  cre.qun)
+    },0)
+    
+
+
     return (
         <div>
             <Container>
@@ -41,8 +48,8 @@ const Cart = () => {
 
                                         cartdata.map((item) => (
 
-                                            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
-                                                <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
+                                            <div className="rounded-lg shadow-2xl  border border-gray-200 bg-gray-800 p-4  dark:border-gray-700 dark: md:p-6">
+                                                <div className=" space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                                                     <a href="#" className="shrink-0 md:order-1">
 
 
@@ -82,7 +89,7 @@ const Cart = () => {
                                                         </div>
                                                         <div className="text-end md:order-4 md:w-32">
                                                             <p className="text-base font-bold text-gray-900 dark:text-white">
-                                                                $1,499
+                                                                $ {(item.qun * (item.price - (item.price * item.discountPercentage / 100))).toFixed(2) }
                                                             </p>
                                                         </div>
                                                     </div>
@@ -424,7 +431,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-                                <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+                                <div className="space-y-4 rounded-lg border border-gray-200  p-4 shadow-sm dark:border-gray-700 bg-gray-800 sm:p-6">
                                     <p className="text-xl font-semibold text-gray-900 dark:text-white">
                                         Order summary
                                     </p>
@@ -468,7 +475,7 @@ const Cart = () => {
                                                 Total
                                             </dt>
                                             <dd className="text-base font-bold text-gray-900 dark:text-white">
-                                                $8,191.00
+                                                ${totalPrice.toFixed(2)}
                                             </dd>
                                         </dl>
                                     </div>
